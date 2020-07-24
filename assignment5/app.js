@@ -1,5 +1,6 @@
 
 // CHAP # 1 TASK NUMBER 1 //
+/*
 alert("Hello! Welome");
 
 // CHAP # 1 TASK NUMBER 2 //
@@ -32,7 +33,7 @@ console.log("Hello... I can run JS through my web browser's console.")
 </html>
 */
 
-
+/*
 
 // CHAP # 2 TASK NUMBER 1//
 var username;
@@ -500,7 +501,7 @@ else if ( Temp > 10 ){
      alert("Remainder From " +firstNumber +" to " +secondNumber +" is: "+(firstNumber%secondNumber));
  }
  
- */
+ 
 
  // CHAP # 12-13 TASK 1//
  var char = prompt("Enter any Character?");
@@ -865,5 +866,845 @@ for(var i = 1; i <= 100; i++){
     }
 }
 document.write("</div>");
+
+
+// CHAP 21-25 TASK 1 //
+var firstName = prompt("Enter First Name");
+var lastName = prompt("Enter Last Name");
+var fullName = firstName + lastName;
+alert("Hello! "+fullName);
+// CHAP 21-25 TASK 2 //
+var Phone = prompt("Enter your Favourite Phone");
+var length = Phone.length;
+document.write(" My Favourite phone is: "+Phone +" <br> Length of String: " +length);
+// CHAP 21-25 TASK 3 //
+var nationality ="Pakistani";
+var index = nationality.indexOf("n");
+document.write(String: "+nationality +" <br> Index of 'n': " +index);
+// CHAP 21-25 TASK 4 //
+var vari ="Hello World";
+var index = vari.lastIndexOf("l");
+document.write("String: "+vari +" <br> Last Index of 'l': " +index );
+// CHAP 21-25 TASK 5 //
+var nationality ="Pakistani";
+var index = nationality.charAt(3);
+document.write("String: "+nationality +" <br> Character at index 3: " +index);
+// CHAP 21-25 TASK 6 //
+var firstName = prompt("Enter First Name");
+var lastName = prompt("Enter Last Name");
+var fullName = firstName.concat(lastName);
+document.write("Hello! "+fullName);
+// CHAP 21-25 TASK 7 //
+var city = "Hyderabad";
+var replaceCity = city.replace("Hyder", "Islam")
+document.write(" City: "+city +" <br> After Replacement: " +replaceCity);
+// CHAP 21-25 TASK 8 //
+var message = "Ali and Sami are best friends. They play cricket and football together."; 
+var replace = message.replace(/and/g, "&")
+document.write(message +" <br><br><br> After Replacement: <br>" +replace);
+// CHAP 21-25 TASK 9 //
+var str = "472";
+var number = parseInt(str);
+document.write(" Value: "+str +" <br> Type: " +typeof(str) +" <br> Value: " +number +" <br> Type: " +typeof(number));
+// CHAP 21-25 TASK 10 //
+var dry = prompt("Enter any Dry Fruit");
+var changeCase = dry.toUpperCase();
+document.write(" User Input: "+dry +" <br> Upper Case: " +changeCase);
+// CHAP 21-25 TASK 11 //
+var input = prompt("Enter any Dry Fruit");
+var first = input.slice(0,1);
+first = first.toUpperCase();
+var second = input.slice(1);
+second = second.toLowerCase();
+changeCase = first + second;
+document.write("User Input: "+input +" <br> Title Case: " +changeCase);
+// CHAP 21-25 TASK 12 //
+var num = 67.38;
+var str = num.toString();
+str = str.replace(".","")
+document.write("Number: "+num +" <br> Result: " +str);
+// CHAP 21-25 TASK 13 //
+var user = prompt("Enter Username");
+ for( var i = 0; i < user.length; i++){
+     if (user[i] === "@" || user[i] === "," || user[i] === "." || user[i] === "!" ){
+         alert(" Enter a Valid Password");
+         break;
+     }
+ }
+ 
+// CHAP 21-25 TASK 14 //
+var A = ["CAKE", "APPLE PIE", "COOKIE", "CHIPS", "PATTIES"];
+var order = prompt("Welcome to ABC Bakery. What do you want to order?");
+order = order.toLowerCase();
+var index = -1;
+var item = "";
+for(var i = 0; i< A.length; i++){
+    if(order === A[i]){
+        item = A[i];
+        index = i;
+        break;
+    }
+    
+}
+if(index != -1 && item != ""){
+    document.write(+order +" is available at index "+i +" in our Bakery.");
+}
+else{
+    document.write(" We are Sorry. "+order +" is not available in our Bakery ");
+}
+// CHAP 21-25 TASK 15 //
+var Password = prompt("Enter Password");
+for( var i = 0; i < Password.length; i++){
+    if( Password.slice(0) >= 'A' && Password.slice(0) <= 'Z' || Password.slice(0) >= "a" && Password.slice(0) <= 'z')
+    {
+        if( Password[i] >= 'A' && Password[i] <= 'Z' || Password[i] >= "a" && Password[i] <= 'z' || Password[i] >= 0 && Password[i] <= 9)
+        {
+             if(Password.length >= 6)  
+                {
+                    document.write('Strong Password..!');
+                }
+             else{
+                document.write('Password must be atleast 6 characters long..!');
+                break;
+             } 
+        }
+        else{
+            document.write("Password must contains only characters and numbers...!");
+            break;
+        }
+    }
+    else{
+        document.write("Password can not begin with a Number or Character. \nPlease Enter a Valid Password");
+        break;
+    }
+}
+// CHAP # 21-25 TASK 16 //
+var university = "University of Karachi";
+var uni = university.split("");
+for(var a=0; a < uni.length; a++){
+    document.write("<br>" +uni[a] )
+}
+// CHAP # 21-25 TASK 17 //
+var input = prompt("Enter you Country");
+var lastChar = input.charAt(input.length-1);
+alert("Last character of input: " +lastChar)
+// CHAP # 21-25 TASK 18 //
+var string = "The quick brown fox jumps over the lazy dog";
+var count = 0;
+for(var i = 0; i < string.length; i++){
+    if (string.slice(i,i+3) === "the" || string.slice(i,i+3) === "The"){
+        count=count+1;
+    }
+}
+document.write(" Text: "+string +" <br> There are " +count +" occurence(s) of word 'the'.");
+// CHAP 26-30 TASK 1 //
+var num = prompt("Enter any positive integer?");
+var round = Math.round(num);
+var ceil = Math.ceil(num);
+var floor = Math.floor(num);
+document.write(" Number: "+num +" <br> Round Off Value: " +round +"<br> Ceil Value: " +ceil +"<br> Floor Value: " +floor);
+// CHAP 26-30 TASK 2 //
+var num = prompt("Enter any Negative Integer?");
+var round = Math.round(num);
+var ceil = Math.ceil(num);
+var floor = Math.floor(num);
+document.write("Number: "+num +" <br> Round Off Value: " +round +"<br> Ceil Value: " +ceil +"<br> Floor Value: " +floor);
+// CHAP 26-30 TASK 3 //
+var num = prompt("Enter any integer?");
+var absolute = Math.abs(num);
+document.write(" Number: "+num +" <br> Absolute Value: " +absolute);
+// CHAP 26-30 TASK 4 //
+var randonDice = Math.random();
+var dice = randonDice * 6;
+dice = Math.ceil(dice);
+document.write("Random Dice Value: " +dice);
+// CHAP 26-30 TASK 5 //
+var randonCoin = Math.random();
+var coin = randonCoin * 2;
+coin = Math.ceil(coin);
+if( coin === 2){
+    alert(+coin +"\nRandom Coin Value: Heads");
+}
+else{
+    alert(+coin +"\nRandom Coin Value: Tails");
+}
+// CHAP 26-30 TASK 6 //
+var random = Math.random();
+var num = random * 100;
+num = Math.floor(num);
+document.write(" Random Number between 1 and 100: "+num);
+ 
+// CHAP 26-30 TASK 7 //
+var weight = prompt("Enter your weight in kgs?");
+weight = parseInt(weight);
+document.write(" The weight of user is: "+weight +" kilograms");
+ 
+// CHAP 26-30 TASK 8 //
+var secret = Math.random() * 10;
+secret = Math.ceil(secret);
+var guess = prompt("Guess a Number between 1 to 10?");
+if ( guess === secret){
+    alert("Congratulations...!");
+}
+else{
+    alert("Try Again..!")
+}
+// CHAP 31-34 TASK 1 //
+var today = new Date();
+document.write(today);
+// CHAP 31-34 TASK 2 //
+var monthsName = ["January", "Feburary", "March", "April", 'May', "June", "July", "August", "Septembe", "October", "November", "December"];
+var today = new Date();
+var month = today.getMonth();
+alert(monthsName[month]);
+// CHAP 31-34 TASK 3 //
+var date = new Date();
+var today = date.toString();
+var day = today.slice(0,3);
+alert("Today is " +day);
+// CHAP 31-34 TASK 4 //
+var date = new Date();
+var day = date.getDay();
+if(day === 0 || day === 1){
+    alert("It's a Fun Day");
+}
+else{
+    alert("It's a Working Day");
+}
+// CHAP 31-34 TASK 5 //
+var date = new Date();
+var day = date.getUTCDate();
+if( day < 16 ){
+    alert("First fifteen days of the month");
+}
+else{
+    alert("Last days of the month");
+}
+// CHAP 31-34 TASK 6 //
+var date = new Date();
+alert(date.getHours());
+var miliseconds = date.getTime();
+var minutes = miliseconds / (60*60);
+document.write("Current Date: "+date +"<br> Elapsed Miliseconds since January 1, 1970: "+miliseconds +"<br> Elapsed Minutes since January 1, 1970: " +minutes);
+// CHAP 31-34 TASK 7 //
+var date = new Date();
+var hour = date.getHours();
+if( hour < 12 ){
+    alert("It's AM");
+}
+else{
+    alert("It's PM");
+}
+// CHAP 31-34 TASK 8 //
+var laterDate = new Date("Dec 31, 2020");
+document.write("Later Date: " +laterDate);
+// CHAP 31-34 TASK 9 //
+var d = new Date("Jun 18, 2015");
+var dMili = d.getTime();
+var date = new Date();
+var mili = date.getTime();
+var difference = mili - dMili;
+var totalDays = difference / ( 1000 * 60 * 60 * 24 );
+totalDays = Math.round(totalDays);
+document.write(totalDays +" days have passed since 1st Ramdan, 2015" );
+// CHAP 31-34 TASK 10 //
+var d = new Date("Jan 1, 2015");
+var dMili = d.getTime();
+var refDate = new Date("Dec 5, 2015");
+var refMili = refDate.getTime();
+var difference = refMili - dMili;
+difference = difference / (1000 * 60);
+difference = Math.round(difference);
+document.write(" On Reference Date " +refDate +", " +difference +" secons have passed since begining of 2015");
+// CHAP 31-34 TASK 11 //
+var date = new Date();
+document.write("Curent Date : " +date +" 1 hour ago, it was "); 
+var hour = date.getHours();
+date.setHours(hour - 1);
+document.write( date )
+// CHAP 31-34 TASK 12 //
+var date = new Date();
+document.write("Curent Date : " +date +" 100 years ago, it was "); 
+var year = date.getFullYear();
+date.setFullYear(year - 100);
+document.write( date )
+// CHAP 31-34 TASK 13 //
+var age = prompt("Enter your Age?");
+var date = new Date();
+var year = date.getFullYear();
+var birthYear = year - age;
+document.write("your Age is " +age +"<br> Your Birth Year is " +birthYear);
+// CHAP 31-34 TASK 14 //
+var customerName = prompt("Enter User Name?");
+var month = prompt("Enter Month");
+var units = 410.44789;
+var charges = 16;
+var chargesDue = units * charges;
+var payable = chargesDue;
+var lateCharges = 350;
+var chargesAfter = lateCharges + payable;
+var afterDue = chargesAfter.toFixed(2);
+document.write(" K - Electric Bill <br> Customer Name: "+customerName +" <br> Month: "+month + " <br> Number of Units: "+units +"<br> Charges per unit: "+charges +" <br><br> Net Amount Payable ( within Due Date): " +payable + " <br> Late Payment Charges "+lateCharges + "<br> Gross Amount Payable ( after Due Date): "+afterDue);
+// CHAP # 34-38 TASK 1 //
+function displayDate () {
+    var date = new Date();
+    document.write(date);
+}
+displayDate();
+// CHAP # 34-38 TASK 2 //
+function greet (firstName, lastName){
+    firstName = prompt("Enter First Name");
+    lastName = prompt("Enter Last Name");
+    var fullName = firstName + " " + lastName;
+    alert("Hello! "+fullName);
+}
+greet();
+ 
+// CHAP # 34-38 TASK 3 //
+function sum (a, b){
+    var c = a + b;
+    return c;
+}
+var first = +prompt("Enter First Number");
+var second = +prompt("Enter Second Number");
+alert(sum (first, second));
+// CHAP # 34-38 TASK 4 //
+function calculator (num1 , num2 , operator ) {
+ if(operator === "+")
+ {
+    return num1 + num2;
+ }
+ else if(operation === "-")
+ {
+    return num1 - num2;
+ }
+ else if(operation === "*")
+ {
+    return num1 * num2;
+ }
+ else if(operation === "/")
+ {
+    return num1 / num2;
+ }
+ else if(operation === "%")
+ {
+    return num1 % num2;
+ }
+ 
+}
+var firstNumber = +prompt("Enter First Number");
+var secondNumber = +prompt("Enter Second Number");
+var operation = prompt("Enter Operation" , "Like (+, -, *, /, %) ");
+document.write(firstNumber +" " + operation +" "+secondNumber +" = " +calculator(firstNumber, secondNumber, operation));
+// CHAP # 34-38 TASK 5 //
+function square (number){
+    return number * number;
+}
+// CHAP # 34-38 TASK 6 //
+function factorial (number) {
+    var fact = 1;
+    for (var i = number; i >= 1; i--){
+        fact = fact * i;
+    }
+    return fact;
+}
+// CHAP # 34-38 TASK 7 //
+function counting ( start, end ){
+    document.write("<div> ");
+    for (var i = start; i <= end; i++)
+    {
+        document.write(" &nbsp " +i);
+    }
+    document.write("</div> ");
+}
+var strart = +prompt("Enter Start");
+var end = +prompt("Enter End");
+counting(start,end);
+// CHAP # 34-38 TASK 8 //
+function Hypotenuse ( base, perp){
+    var hyp = square(base) + square(perp);
+    return hyp;
+}
+var base = +prompt("Enter Base of a Triangle ");
+var perp = +prompt("Enter Perpendicular of a Triangle ");
+document.write(" Hypotenuse of Triangle = " +Hypotenuse(base, perp));
+// CHAP # 34-38 TASK 9 //
+function area( width , height){
+    var A = width * height;
+    return A;
+}
+    
+    alert(" Area = " + area ( 4, 2));
+    var width = +prompt("Enter Width");
+    var height = +prompt("Enter Height");
+    document.write(" Area = " + area ( width, height));
+// CHAP # 34-38 TASK 10 //
+function checkPalindrome( string ) {
+    var reverse = "" ;
+    for ( var i = string.length - 1; i >= 0; i--){
+        reverse += string[i];
+    }
+    if ( reverse === string){
+        alert("The given String is Palindrome");
+    }
+    else{
+        alert("The given String is not Palindrome");
+    }
+    
+}
+var str = prompt("Enter any String"); 
+checkPalindrome(str);
+// // CHAP # 34-38 TASK 11 //
+function titleCase(str) {
+    var result= str.split(" ");
+      
+    
+    for(var i = 0; i < result.length; i++) {
+    result[i] = result[i].charAt(0).toUpperCase() + result[i].slice(1, result[i.length]);
+    }
+    return result.join(" ");
+    }
+    alert(titleCase("the quick brown fox"));
+// CHAP # 34-38 TASK 12 //
+function findLongestWord(str) {
+    var strSplit = str.split(' ');
+    var longestWord = 0;
+    var word = "";
+    for(var i = 0; i < strSplit.length; i++){
+      if(strSplit[i].length > longestWord){
+      longestWord = strSplit[i].length;
+      word = strSplit[i];
+       }
+    }
+    return word;
+  }
+  var string = prompt('Enter a String');
+  document.write("String: " +string + "<br> The longest Word is "+findLongestWord(string));
+// CHAP # 34-38 TASK 13 //
+function occurence(string, letter){
+    var count = 0;
+        for(var i = 0; i < string.length; i++){
+             if (string.slice(i,i+1) === letter){
+             count=count+1;
+            }
+        }
+    return count;
+}
+var string = "JSResourceS.com";
+var char = 'o';
+document.write("Text: "+string +" <br> There are " +occurence(string,char) +" occurence(s) of letter " +char);
+// CHAP # 34-38 TASK 14 //
+function calcCircumference( radius){
+     var circumf = 2 * 3.14 * radius;
+     document.write("The Circumference of Circle: " +circumf);
+}
+function calcArea( radius){
+    var area = 3.14 * 3.14 * radius;
+    document.write("The Area of Circle: " +area );
+}
+var r = +prompt("Enter Radius of Circle");
+calcCircumference(r);
+calcArea(r);
+
+
+// CHAP # 38-42 TASK 1 //
+function pow(base, power){
+    var ans = 1;
+    for( var i=1; i <= power; i++){
+        ans = ans * base;
+    }
+    return ans;
+}
+
+var base = prompt("Enter Base");
+var power = prompt("Enter Power");
+alert( pow(base, power));
+
+
+// CHAP # 38-42 TASK 2 //
+function leapYear(year)
+{
+    if ((year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0)){
+        alert(+year +" is a Leap Year");
+    }
+    else{
+        alert(+year +" is not a Leap Year");
+    }
+}
+var year = prompt("Enter any Year. For Example 2011");
+leapYear(year);
+
+
+
+// CHAP # 38-42 TASK 3 //
+function calcS(a, b, c){
+    var s = (a+b+c)/2;
+    return s;
+}
+
+function triangleArea(a, b, c){
+    var area = calcS(a, b, c)*(calcS(a, b, c) - a)*(calcS(a, b, c) - b)*(calcS(a, b, c) - c);
+    return area;
+}
+alert( triangleArea(2,4,5));
+
+
+// CHAP # 38-42 TASK 4 //
+function average (sub1, sub2, sub3){
+    var avg = (sub1 + sub2 + sub3)/3;
+    return avg.toFixed(3);
+}
+function percentage(total, obtainedMarks){
+    var per = (obtainedMarks/total)*100;
+    per = Math.round(per);
+    return per;
+}
+function mainFunction(){
+    var sub1 = +prompt("Enter Obtained Marks of English out of 100");
+    var sub2 = +prompt("Enter Obtained Marks of Urdu out of 100");
+    var sub3 = +prompt("Enter Obtained Marks of Math out of 100");
+    var sum = sub1 + sub2 + sub3;
+    alert("Average Marks : " +average(sub1, sub2, sub3));
+    alert("Percentage : " +percentage (300, sum) +"%");
+}
+
+mainFunction();
+
+
+// CHAP # 38-42 TASK 5 //
+function findIndex(string, char){
+   
+    var index;
+    for (var i = 0; i < string.length; i++){
+        if( string[i] == char){
+            index = i;
+            return index;
+        }
+    }
+
+}
+
+var str = "Mariam";
+alert(findIndex(str, 'r'));
+
+
+
+// // CHAP # 38-42 TASK 6 //
+function delVowels(string){
+    if (string.length <= 25) {
+        string = string.toLowerCase();
+        return string.replace(/[aeiou]/gi, '');
+    }
+    else{
+        var err = "Sorry! Length of String can not exceed to 25 characters!";
+        return err;
+    }
+    
+}
+alert(delVowels("Hello World"));
+
+
+
+// CHAP # 38-42 TASK 7 //
+function vowelOccurence(str) {
+    str = str.toLowerCase();
+    var result= str.split(" ");
+    var count = 0;
+    var res;
+    for(var i = 0; i < result.length; i++) {
+        res = result.slice(i, i+2);
+        if(res.match(/aeiou/gi))
+
+    }
+    return count;
+    }
+    alert(vowelOccurence("Pleases read this application and give me gratuity"));
+
+
+
+// CHAP # 38-42 TASK 8 //
+function kmToMeter(km){
+    return km*1000;
+}
+
+function kmToFeet(km){
+    return km*3280.839895;
+}
+
+function kmToIn(km){
+    return km*39370.078740157;
+}
+function kmToCm(km){
+    return km*100000;
+}
+
+// CHAP # 38-42 TASK 8 //
+function overTime(workHour, salary){
+
+    if(workHour > 40){
+        for(var i = 41; i <= workHour; i++){
+            salary = salary + 12;
+        }
+    }
+    return salary;  
+}
+ var sal = prompt("Enter Your Monthly Salary");
+ var hour = prompt("Enter number of Worked Hours");
+alert(overTime(hour, sal));
+
+
+
+// CHAP # 38-42 TASK 10 //
+function withdraw(rupees){
+    var hund, fifty, ten;
+    
+    hund = Math.floor(rupees / 100);
+    rupees = rupees % 100;
+    fifty = Math.floor(rupees / 50);
+    rupees = rupees % 50;
+    ten = Math.floor(rupees / 10);
+
+    document.write("<div> You will have "+hund +" hundred notes, " +fifty +" fifty notes and " +ten +" ten notes" + "</div>");
+
+}
+var rup = prompt("Enter the amount to be withdraw?", "Amount")
+withdraw(rup);
+
+
+
+
+// CHAP # 43-48 TASK 1 //
+function hello(){
+    alert(" Welcome to Saylani!")
+}
+
+
+// CHAP # 43-48 TASK 2 //
+function image(){
+    alert("Thanks for purchasing a Phone from us!")
+}
+
+
+
+// CHAP # 43-48 TASK 3 //
+
+function deleteRow(row){
+    var count = row.parentNode.parentNode.rowIndex;
+    document.getElementById("myTable").deleteRow(count);
+}
+
+
+// CHAP # 43-48 TASK 4 //
+
+function MouseOver(){
+    document.getElementById("imgClick").src = "4.jpg";
+}
+function MouseOut(){
+    document.getElementById("imgClick").src = "3.jpg";
+}
+
+// CHAP # 43-48 TASK 5 //
+var count = 0;
+function increase(){
+    count++;
+    document.getElementById("count").innerHTML = count;
+    
+}
+function decrease(){
+    count--;
+    document.getElementById("count").innerHTML = count;
+    
+}
+
+// CHAP # 49-52 TASK 1 //
+
+function signUp(){
+    var name = document.getElementById("name").value;
+    var num = document.getElementById("num").value;
+    var mail = document.getElementById("mail").value;
+    document.getElementById("form").style.visibility = "hidden";
+    document.getElementById("head").style.visibility = "visible";
+    document.getElementById("heading").style.visibility = "hidden";
+    document.getElementById("name").style.visibility = "hidden";
+    document.getElementById("subname").style.visibility = "visible";
+    document.getElementById("subname").innerHTML = name;
+    document.getElementById("num").style.visibility = "hidden";
+    document.getElementById("subnum").style.visibility = "visible";
+    document.getElementById("subnum").innerHTML = num;
+    document.getElementById("mail").style.visibility = "hidden";
+    document.getElementById("submail").style.visibility = "visible";
+    document.getElementById("submail").innerHTML = mail;
+    document.getElementById("pass").style.visibility = "hidden";
+    document.getElementById("Cpass").style.visibility = "hidden";
+}
+
+
+// CHAP # 49-52 TASK 2 //
+function readMore(){
+    var specif = "  Model : Oppo A5s <br> Status : Available <br> Size : 6.2 inches <br> Resolution : 720 x 1520 pixels <br> RAM : 2GB, 3GB, 4GB <br> ROM : 32GB, 64GB <br> Price : 22000";
+    var para = document.getElementById("specification");
+    para.innerHTML = specif;   
+}
+
+
+// CHAP # 49-52 TASK 3 //
+var num;
+        function edit_row(no) {
+            num = no;
+            document.getElementById("edit-form").style.visibility = "visible";
+            document.getElementById("save_button" + num).focus();
+
+            var name = document.getElementById("name_row" + no);
+            var country = document.getElementById("country_row" + no);
+            var age = document.getElementById("age_row" + no);
+
+            document.getElementById("name-form").value = document.getElementById("name_row" + no).innerHTML;
+            document.getElementById("name-form").style.backgroundColor = "rgb(163, 184, 240)";
+
+            document.getElementById("c-form").value = document.getElementById("country_row" + no).innerHTML;
+            document.getElementById("c-form").style.backgroundColor = "rgb(163, 184, 240)";
+
+            document.getElementById("age-form").value = document.getElementById("age_row" + no).innerHTML;
+            document.getElementById("age-form").style.backgroundColor = "rgb(163, 184, 240)";
+
+        }
+
+        function save_row() {
+            
+            var name_val = document.getElementById("name-form").value;
+            var country_val = document.getElementById("c-form").value;
+            var age_val = document.getElementById("age-form").value;
+
+            document.getElementById("name_row" + num).innerHTML = name_val;
+            document.getElementById("country_row" + num).innerHTML = country_val;
+            document.getElementById("age_row" + num).innerHTML = age_val;
+
+            // document.getElementById("edit_button" + num).style.display = "block";
+            // document.getElementById("save_button" + num).style.display = "none";
+            document.getElementById("edit-form").style.visibility = "hidden";
+        }
+
+        function add_row() {
+            var new_name = document.getElementById("new_name").value;
+            var new_country = document.getElementById("new_country").value;
+            var new_age = document.getElementById("new_age").value;
+
+            var table = document.getElementById("data_table");
+            var table_len = (table.rows.length) - 1;
+            var row = table.insertRow(table_len).outerHTML = "<tr id='row" + table_len + "'><td id='name_row" + table_len + "'>" + new_name + "</td><td id='country_row" + table_len + "'>" + new_country + "</td><td id='age_row" + table_len + "'>" + new_age + "</td><td><input type='button' id='edit_button" + table_len + "' value='Edit' class='edit' onclick='edit_row(" + table_len + ")'> <input type='button' id='save_button" + table_len + "' value='Save' class='save' onclick='save_row(" + table_len + ")'> <input type='button' value='Delete' class='delete' onclick='delete_row(" + table_len + ")'></td></tr>";
+
+            document.getElementById("new_name").value = "";
+            document.getElementById("new_country").value = "";
+            document.getElementById("new_age").value = "";
+        }
+
+        function delete_row(no) {
+            document.getElementById("row" + no + "").outerHTML = "";
+        }
+
+
+ // CHAP # 53-58 TASK 1 // 
+
+  var imageArray = ["others/1.jpg", "others/2.jpg", "others/3.jpg", "others/4.png","others/5.jpg","others/6.jpg","others/7.jpg",
+    "others/8.jpg","others/9.jpg","others/10.jpg","others/11.jpg","others/12.jpg","others/13.jpg","others/14.jpg","others/15.jpg"];
+    
+
+ function modalFunction(){
+    for(var i = 0; i < imageArray.length; i++){
+    
+        document.getElementById("myImages").src = imageArray[i];
+        
+   
+   var modal = document.getElementById("modal");
+   modal.classList.add('modal-open');
+   modal.classList.remove('modal-close');
+   modal.style.display = "block";
+   document.getElementById("myImages").src = imageArray[i];}
+ }
+
+ function onClosedImagModal(){
+    var modal = document.getElementById("modal");
+    modal.classList.remove('modal-open');
+    modal.classList.add('modal-close');
+    setTimeout(()=>{ modal.style.display = "none"; }, 550)
+ }
+
+
+  // CHAP # 53-58 TASK 1 // 
+    function zoomIn(){
+        document.getElementById("para").style.fontSize = "large";
+        
+    }
+    function zoomOut(){
+        document.getElementById("para").style.fontSize = "small";
+        
+    }
+
+ 
+// CHAP # 58-67 TASK 1 part 1 // 
+var content = document.getElementById("main-content");
+console.log(content);
+
+
+
+// CHAP # 58-67 TASK 1 part 2 //
+var content = document.getElementById("main-content");
+console.log(content.childNodes);
+
+
+// CHAP # 58-67 TASK 1 part 3 //
+var content = document.getElementsByClassName("render");
+console.log(content.childNodes[0]);
+
+
+
+// CHAP # 58-67 TASK 1 part 4 //
+document.getElementById("first-name").value = "Mariam";
+
+
+// CHAP # 58-67 TASK 1 part 5 //
+
+document.getElementById("first-name").value = "Mariam";
+document.getElementById("last-name").value = "Khan";
+document.getElementById("email").value = "abc@gmail.com";
+
+
+// CHAP # 58-67 TASK 2 part 1 //
+var content = document.getElementById("form-content");
+console.log(content.nodeType);
+
+
+
+// CHAP # 58-67 TASK 2 part 2 //
+var content = document.getElementById("lastName");
+console.log(content.nodeType);
+console.log(content.childNodes[0]);
+
+
+// CHAP # 58-67 TASK 2 part 4 //
+var content = document.getElementById("main-content");
+console.log(content.firstChild);
+console.log(content.lastChild);
+
+
+// CHAP # 58-67 TASK 2 part 5 //
+var content = document.getElementById("lastName");
+console.log(content.previousSibling);
+console.log(content.nextSibling);
+
+
+
+
+// CHAP # 58-67 TASK 2 part 6 //
+var content = document.getElementById("email");
+console.log(content.parentNode);
+console.log(content.nodeType);
+
+*/
+
+
+
+
+
 
 
